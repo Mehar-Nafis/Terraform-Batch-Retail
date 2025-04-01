@@ -13,11 +13,11 @@ vi instance.tf
 ```
 ```
 provider "aws" {
-  region     = var.AWS_REGION
+  region     = "us-east-1"
 }
 
 resource "aws_instance" "example" {
-  ami           = var.AMIS[var.AWS_REGION]
+  ami           = "ami-084568db4383264d4"
   instance_type = "t2.micro"
 }
 ```
@@ -40,33 +40,11 @@ output "Private_ip" {
 ```
 Save the file
 
-In `vars.tf` ensure to replace your `region` and Include your `region's Ubuntu AMI ID` to the list.
-```
-vi vars.tf
-```
-```
-variable "AWS_REGION" {
-  default = "us-east-2"
-}
 
-variable "AMIS" {
-  type = map(string)
-  default = {
-    us-east-2 = "ami-089c26792dcb1fbd4"
-    us-west-2 = "ami-00448a337adc93c05"
-    eu-west-1 = "ami-0e309a5f3a6dd97ea"
-  }
-}
-```
+
 Once replaced, save the changes.
 ```
 terraform init
-```
-```
-terraform fmt
-```
-```
-terraform validate
 ```
 ```
 terraform plan
