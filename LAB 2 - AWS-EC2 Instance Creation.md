@@ -13,7 +13,6 @@ Add the given lines, by pressing "INSERT"
 2. `"Yourname-EC2-1"` with Your Name.
 ```
 provider "aws" {
-  profile = "default" # This line is not mandatory.
   region  = "us-east-2"
 }
 
