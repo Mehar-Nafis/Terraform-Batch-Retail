@@ -34,9 +34,6 @@ resource "aws_instance" "terraform-remoteState" {
   instance_type = "t2.nano"
 }
 
-output "ip" {
-  value = aws_instance.terraform-remoteState.public_ip
-}
 ```
 Save the file using "ESCAPE + :wq!"
 ```
